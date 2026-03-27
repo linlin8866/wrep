@@ -1088,7 +1088,7 @@ print_links_grouped(){
   # 直连9
   links_direct+=("vless://${UUID}@${host}:${PORT_VLESSR}?encryption=none&flow=xtls-rprx-vision&security=reality&sni=${REALITY_SERVER}&fp=chrome&pbk=${REALITY_PUB}&sid=${REALITY_SID}&type=tcp#vless-reality")
   links_direct+=("vless://${UUID}@${host}:${PORT_VLESS_GRPCR}?encryption=none&security=reality&sni=${REALITY_SERVER}&fp=chrome&pbk=${REALITY_PUB}&sid=${REALITY_SID}&type=grpc&serviceName=${GRPC_SERVICE}#vless-grpc-reality")
-  links_direct+=("trojan://${UUID}@${host}:${PORT_TROJANR}?security=tls&sni=${REALITY_SERVER}&fp=chrome&type=tcp#trojan-normal")
+  links_direct+=("trojan://${UUID}@${host}:${PORT_TROJANR}?security=tls&sni=${REALITY_SERVER}&fp=chrome&alpn=h2&fingerprint=7B81BFD741452297338913A20AE9BF7C8AF7F00ECEEC47118E2B1978DB310354&type=tcp#trojan-normal")
   links_direct+=("hy2://$(urlenc "${HY2_PWD}")@${host}:${PORT_HY2}?insecure=1&allowInsecure=1&sni=${REALITY_SERVER}#hysteria2")
   local VMESS_JSON; VMESS_JSON=$(cat <<JSON
 {"v":"2","ps":"vmess-ws","add":"${ip}","port":"${PORT_VMESS_WS}","id":"${UUID}","aid":"0","net":"ws","type":"none","host":"","path":"${VMESS_WS_PATH}","tls":""}
